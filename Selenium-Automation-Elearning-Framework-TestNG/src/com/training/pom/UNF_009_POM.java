@@ -52,6 +52,7 @@ public class UNF_009_POM {
 	@FindBy(xpath = "//div[@id='content']//p[contains(text(),'Your shopping cart is empty!')]")
 	private WebElement emptymsg;
 	
+	//Click on Regular TShirt
 	public void clicktshirtRust() throws InterruptedException{
 		Thread.sleep(1000);
 		this.tshirtRust.click();
@@ -66,6 +67,7 @@ public class UNF_009_POM {
 		
 	} 
 	
+	//Select Chest Size
 	public void selectchestSize(String csize) throws InterruptedException {
 		
 		Select sel = new Select(chestsizeSelect);
@@ -78,6 +80,7 @@ public class UNF_009_POM {
 				
 	}
 	
+	//Add to Cart
 	public void addtoCart() {
 		
 		this.addcart.click();
@@ -94,6 +97,7 @@ public class UNF_009_POM {
 		
 	}
 	
+	//View Cart
 	public void viewCart(){
 		this.cart.click();
 		this.viewcart.click();
@@ -106,6 +110,7 @@ public class UNF_009_POM {
 		
 	}
 	
+	//Remove
 	public void clickRemove(){
 		this.removeicon.click();
 		String emptmsg = this.emptymsg.getText();

@@ -29,6 +29,7 @@ public class UNF_009_Test {
 		properties.load(inStream);
 	}
 
+	//Launch the application
 	@BeforeClass
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
@@ -46,26 +47,31 @@ public class UNF_009_Test {
 		driver.quit();
 	}
 	
+	//Step 1: Click on Regular TShirt
 	@Test 
 	public void Step1() throws InterruptedException {
 				UNF_009_POM.clicktshirtRust();
 				}
 	
+	//Step 2: Select Chest Size
 	@Test (dependsOnMethods = "Step1")
 	public void Step2() throws InterruptedException {
 		UNF_009_POM.selectchestSize("42");
 	}
 
+	//Step 3: Add to Cart
 	@Test (dependsOnMethods = "Step2") 
 	public void Step3() {
 		UNF_009_POM.addtoCart();
 	}
 	
+	//Step 4: View Cart
 	@Test (dependsOnMethods = "Step3")
 	public void Step4() {
 		UNF_009_POM.viewCart();
 	}
 	
+	//Step 5: Remove
 	@Test (dependsOnMethods = "Step4")
 	public void Step5() {
 		UNF_009_POM.clickRemove();

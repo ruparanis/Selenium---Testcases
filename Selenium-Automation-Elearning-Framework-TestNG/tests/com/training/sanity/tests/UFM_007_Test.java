@@ -48,6 +48,8 @@ public class UFM_007_Test {
 		driver.quit();
 	}
 	
+	//Valid Login
+	
 	@Test
 	public void validLoginTest() {
 		UFM_007_POM.usermenu();
@@ -56,6 +58,8 @@ public class UFM_007_Test {
 		UFM_007_POM.sendPassword("Denny");
 		UFM_007_POM.clickLoginBtn(); 
 		}
+	
+	//Step 1 : Click on Change Password
 	
 	@Test (dependsOnMethods = "validLoginTest")
 	public void Step1() {
@@ -68,17 +72,20 @@ public class UFM_007_Test {
 		Assert.assertEquals(ActTitle, ExpTitle);
 		System.out.println("Step 1: PASS - " + ActTitle+" is displayed");
 		}
-	
+
+	//Step 2: Enter New Password
 	@Test (dependsOnMethods = "Step1")
 	  public void Step2() {
 		UFM_007_POM.sendnewPassword("Rani");
 	 }
 	
+	//Step 3: Enter Confirm Password
 	@Test (dependsOnMethods = "Step2")
 	  public void Step3(){
 		UFM_007_POM.sendconfirmPassword("Rupa");
 	  }
 	
+	//Step 4: Continue
 	@Test (dependsOnMethods = "Step3")
 	  public void Step4() throws InterruptedException{
 		UFM_007_POM.clickContinue();

@@ -30,6 +30,7 @@ public class UFM_008_Test {
 		properties.load(inStream);
 	}
 
+	//Launches the application
 	@BeforeClass
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
@@ -47,21 +48,25 @@ public class UFM_008_Test {
 		driver.quit();
 	}
 	
+	//Step 1: Clicks on Regular TShirt
 	@Test 
 	public void Step1() throws InterruptedException {
 				UFM_008_POM.clicktshirtRust();
 				}
 	
+	//Step 2: Select Chest Size
 	@Test (dependsOnMethods = "Step1")
 	public void Step2() throws InterruptedException {
 		UFM_008_POM.selectchestSize("42");
 	}
 
+	//Step 3: Click on Add to Cart
 	@Test (dependsOnMethods = "Step2") 
 	public void Step3() {
 		UFM_008_POM.addtoCart();
 	}
 	
+	//Step 4: Click on View Cart
 	@Test (dependsOnMethods = "Step3")
 	public void Step4() {
 		UFM_008_POM.viewCart();

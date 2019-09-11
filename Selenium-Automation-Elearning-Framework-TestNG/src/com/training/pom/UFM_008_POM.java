@@ -48,6 +48,8 @@ public class UFM_008_POM {
 	@FindBy(xpath = "//table[@class='table table-bordered']//img[@title='REGULAR T-SHIRTS (Rust)']")
 	private WebElement selecteditem;
 	
+	//Click on Regular TShirt
+	
 	public void clicktshirtRust() throws InterruptedException{
 		Thread.sleep(1000);
 		this.tshirtRust.click();
@@ -62,18 +64,11 @@ public class UFM_008_POM {
 		
 	} 
 	
+	//Select Chest Size
+	
 	public void selectchestSize(String csize) throws InterruptedException {
 		
 		Select sel = new Select(chestsizeSelect);
-		
-		/*//Display elements of the drop down
-		List<WebElement> data = sel.getOptions();
-		System.out.println(data.size());
-		
-		for(int i=0; i<data.size(); i++)
-		{
-			System.out.println(data.get(i).getText());
-		}*/
 		
 		sel.selectByVisibleText(csize);
 		Thread.sleep(1000);
@@ -83,6 +78,8 @@ public class UFM_008_POM {
 		System.out.println("Step 2: PASS - Chest size selected");
 				
 	}
+	
+	//Add to Cart
 	
 	public void addtoCart() {
 		
@@ -99,6 +96,8 @@ public class UFM_008_POM {
 		
 		
 	}
+	
+	//View Cart
 	
 	public void viewCart(){
 		this.cart.click();

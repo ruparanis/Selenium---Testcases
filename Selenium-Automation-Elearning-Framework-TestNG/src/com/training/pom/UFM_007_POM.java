@@ -44,33 +44,40 @@ public class UFM_007_POM {
 	@FindBy(xpath="//div[@class='text-danger']")
 	private WebElement pwdconfirmmsg;
 	
+	//Click on the User Menu
 	public void usermenu(){
 		this.user.click();
 	}
 	
+	//Click on the login link
 	public void login(){
 		this.login.click();
 	}
 	
+	//Enter Username
 	public void sendEmail(String email) {
 		this.email.clear();
 		this.email.sendKeys(email);
 	}
 	
+	//Enter Password
 	public void sendPassword(String password) {
 		this.password.clear(); 
 		this.password.sendKeys(password); 
 	}
 	
+	//Login
 	public void clickLoginBtn() {
 		this.loginBtn.click(); 
 	}
 
+	//Click on Change Password Link
 	public void clickchangepwdlink(){
 		this.changepwdlink.click();
 			
 	}
 	
+	//Enter New Password
 	public void sendnewPassword(String newpassword) {
 		this.newpwd.clear(); 
 		this.newpwd.sendKeys(newpassword); 
@@ -81,6 +88,7 @@ public class UFM_007_POM {
 		
 	}
 	
+	//Enter Confirm Password
 	public void sendconfirmPassword(String confirmpassword) {
 			
 		this.confirmpwd.clear(); 
@@ -93,10 +101,12 @@ public class UFM_007_POM {
 			System.out.println("Step 3: FAIL");
 	}
 	
+	//Click on Continue
 	public void clickContinue(){
 		this.continuebtn.click();
 	}
 	
+	//Validate the Error Message
 	public void pwdconfirmerrormsg() {
 		String pwdmsg = this.pwdconfirmmsg.getText();
 		if (pwdmsg.equals("Password confirmation does not match password!"))
