@@ -50,6 +50,6 @@ public class LoginTests {
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot("First");
+	//	screenShot.captureScreenShot("First");
 	}
 }
