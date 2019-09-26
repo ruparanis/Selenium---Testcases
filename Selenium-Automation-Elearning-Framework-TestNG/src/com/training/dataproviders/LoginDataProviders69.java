@@ -63,6 +63,13 @@ public class LoginDataProviders69 {
 		return new ApachePOIExcelRead().getExcelContent(fileName,sheetName); 
 	}
 	
+	@DataProvider(name = "product-excel-inputs")
+	public static Object[][] getExcelProductData(){
+		String fileName ="C:/Users/RUPARANI/Desktop/TestData.xlsx"; 
+		String sheetName ="Sheet2";
+		return new ApachePOIExcelRead().getExcelContent(fileName,sheetName); 
+	}
+	
 	@DataProvider(name = "xls-inputs")
 	public static Object[][] getXLSData(){
 		// ensure you will have the title as first line in the file 
